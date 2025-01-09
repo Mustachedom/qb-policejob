@@ -222,3 +222,16 @@ CreateThread(function()
         EndTextCommandSetBlipName(blip)
     end
 end)
+
+local function getCops()
+    local amount = 0
+    local recieved = false
+    QBCore.Functions.TriggerCallback('police:GetCops', function(data)
+        amount = data
+        recieved = true
+    end)
+    repeat Wait(1) until recieved
+    return amount
+end
+
+exports('GetCops', getCops)
