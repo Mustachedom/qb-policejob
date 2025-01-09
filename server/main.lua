@@ -39,6 +39,7 @@ local function GetCurrentCops()
     return amount
 end
 
+exports('GetCops', GetCurrentCops)
 -- Callbacks
 
 QBCore.Functions.CreateCallback('police:GetDutyPlayers', function(_, cb)
